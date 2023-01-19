@@ -63,7 +63,7 @@
     width: 15px;
     height: 15px;
     content: "";
-    background: var(--primary-color);
+    background: red;
     color: white;
     border-radius: 50px;
     display: flex;

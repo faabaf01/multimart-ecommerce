@@ -1,6 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 import Helmet from "../components/Helmet/Helmet";
+import "../styles/home.css";
+
 import { Container, Row, Col } from "reactstrap";
+import heroImg from "../assets/images/hero-img.png";
 
 const Home = () => {
   const year = new Date().getFullYear();
@@ -20,7 +26,14 @@ const Home = () => {
                   minima placeat, voluptatem labore velit repellat quod beatae
                   commodi. Iusto, animi. Mollitia, earum possimus?
                 </p>
-                <button className="buy__btn">SHOP NOW</button>
+                <motion.button whileTap={{ scale: 1.2 }} className="buy__btn">
+                  <Link to="/shop">SHOP NOW</Link>
+                </motion.button>
+              </div>
+            </Col>
+            <Col lg="6" md="6">
+              <div className="hero__img">
+                <img src={heroImg} alt="" />
               </div>
             </Col>
           </Row>
