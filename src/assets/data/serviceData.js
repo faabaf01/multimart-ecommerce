@@ -8,21 +8,19 @@ const serviceData = [
   {
     icon: "ri-refresh-line",
     title: "Easy Returns",
-    subtitle: "Read through our policy about how to return products.",
+    subtitle: "Read through our policy on how to return products.",
     bg: "#ceebe9",
   },
   {
     icon: "ri-secure-payment-line",
     title: "Secure Payment",
-    subtitle:
-      "All payment data are encrypted during transmission to protect you.",
+    subtitle: "All payment data are encrypted to protect you.",
     bg: "#e2f2b2",
   },
   {
     icon: "ri-exchange-dollar-line",
-    title: "Money Back Guarantee",
-    subtitle:
-      "If you are not satisfied with the purchase, just return within 7 days and we'll issue a full refund.",
+    title: "Back Guarantee",
+    subtitle: "Return within 7 days and we'll issue a full refund.",
     bg: "#d6e5fb",
   },
 ];
