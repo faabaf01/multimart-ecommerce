@@ -2,7 +2,7 @@ const serviceData = [
   {
     icon: "ri-truck-line",
     title: "Free Shipping",
-    subtitle: "On your first purchase by downloading our free app.",
+    subtitle: "On your first purchase. Just download our app!",
     bg: "#fdefe6",
   },
   {
