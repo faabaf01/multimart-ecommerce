@@ -12,6 +12,8 @@ import heroImg from "../assets/images/hero-img.png";
 import Services from "../services/Services";
 import ProductsList from "../components/UI/ProductsList";
 
+import counterImg from "../assets/images/counter-timer-img.png";
+
 const Home = () => {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestSalesProducts, setBestSalesProducts] = useState([]);
@@ -80,6 +82,17 @@ const Home = () => {
             </Col>
 
             <ProductsList data={bestSalesProducts} />
+          </Row>
+        </Container>
+      </section>
+
+      <section className="timer__count">
+        <Container>
+          <Row>
+            <Col lg="6" md="6"></Col>
+            <Col lg="6" md="6" className="text-end">
+              <img src={counterImg} alt="" />
+            </Col>
           </Row>
         </Container>
       </section>
