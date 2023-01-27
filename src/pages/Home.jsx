@@ -19,6 +19,9 @@ import counterImg from "../assets/images/counter-timer-img.png";
 const Home = () => {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestSalesProducts, setBestSalesProducts] = useState([]);
+  const [mobileProducts, setMobileProducts] = useState([]);
+  const [wirelessProducts, setWirelessProducts] = useState([]);
+  const [popularProducts, setPopularProducts] = useState([]);
 
   const year = new Date().getFullYear();
 
@@ -31,8 +34,23 @@ const Home = () => {
       (item) => item.category === "sofa"
     );
 
+    const filteredMobileProducts = products.filter(
+      (item) => item.category === "mobile"
+    );
+
+    const filteredWirelessProducts = products.filter(
+      (item) => item.category === "wireless"
+    );
+
+    const filteredPopularProducts = products.filter(
+      (item) => item.category === "watch"
+    );
+
     setTrendingProducts(filteredTrendingProducts);
     setBestSalesProducts(filteredBestSalesProducts);
+    setMobileProducts(filteredMobileProducts);
+    setWirelessProducts(filteredWirelessProducts);
+    setPopularProducts(filteredPopularProducts);
   }, []);
 
   return (
@@ -114,9 +132,22 @@ const Home = () => {
       <section className="new__arivals">
         <Container>
           <Row>
-            <Col lg="12" className="text-center">
+            <Col lg="12" className="text-center mb-5">
               <h2 className="section__title">New Arrivals</h2>
             </Col>
+            <ProductsList data={mobileProducts} />
+            <ProductsList data={wirelessProducts} />
+          </Row>
+        </Container>
+      </section>
+
+      <section className="popular_categories">
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center mb-5">
+              <h2 className="section__title">Popular In Category</h2>
+            </Col>
+            <ProductsList data={popularProducts} />
           </Row>
         </Container>
       </section>
