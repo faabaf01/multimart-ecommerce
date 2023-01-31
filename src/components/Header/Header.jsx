@@ -28,6 +28,8 @@ const nav__links = [
 const Header = () => {
   const headerRef = useRef(null);
 
+  const menuRef = useRef(null);
+
   //document.body is a reference to the <body> element of the HTML document
   //This element contains the main content of the page.
   //document.documentElement is a reference to the <html> element of the HTML document.
@@ -51,6 +53,8 @@ const Header = () => {
     return () => window.removeEventListener("scroll", stickyHeaderFunc);
   }, []);
 
+  const menuToggle = () => menuRef.current.classList.toggle("active__menu");
+
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -62,7 +66,7 @@ const Header = () => {
                 <h1>Multimart</h1>
               </div>
             </div>
-            <div className="navigation">
+            <div className="navigation" ref={menuRef} onClick={menuToggle}>
               <ul className="menu">
                 {nav__links.map((item, index) => (
                   <li className="nav__item" key={index}>
@@ -86,13 +90,13 @@ const Header = () => {
 
               <span className="cart__icon">
                 <i class="ri-shopping-bag-line"></i>
-                <span className="badge">1</span>
+                <span className="badge">2</span>
               </span>
               <span>
                 <motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" />
               </span>
               <div className="mobile__menu">
-                <span>
+                <span onClick={menuToggle}>
                   <i class="ri-menu-line"></i>
                 </span>
               </div>
